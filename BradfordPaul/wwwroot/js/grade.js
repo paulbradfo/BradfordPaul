@@ -5,56 +5,63 @@
     var ex = parseInt($("#exam").val());
     var tex = parseInt($("#intex").val());
 
-    var perc = ((as / 55) + (gr / 5) + (qu / 10) + (ex / 20) + (tex / 10)) * 100;
+    /*Add the grades together*/
+
+    var perc = as + gr + qu + ex + tex
     var letter = "";
 
+    /*Assign a Letter grade according to the sum of all grade categories*/
+
     if (perc >= 94) {
-        letter = "A"
+        letter = "an A";
     }
 
     else if (90 <= perc && perc < 94) {
-        letter = "A-"
+        letter = "an A-";
     }
 
     else if (87 <= perc && perc < 90) {
-        letter = "B+"
+        letter = "a B+";
     }
 
     else if (84 <= perc && perc < 87) {
-        letter = "B"
+        letter = "a B";
     }
 
     else if (80 <= perc && perc < 84) {
-        letter = "B-"
+        letter = "a B-";
     }
 
     else if (77 <= perc && perc < 80) {
-        letter = "C+"
+        letter = "a C+";
     }
 
     else if (74 <= perc && perc < 77) {
-        letter = "C"
+        letter = "a C";
     }
 
     else if (70 <= perc && perc < 74) {
-        letter = "C-"
+        letter = "a C-";
     }
 
     else if (67 <= perc && perc < 70) {
-        letter = "D+"
+        letter = "a D+";
     }
 
     else if (64 <= perc && perc < 67) {
-        letter = "D"
+        letter = "a D";
     }
 
     else if (60 <= perc && perc < 64) {
-        letter = "D-"
+        letter = "a D-";
     }
 
-    else { letter = "E" }
+    else { letter = "an E"; }
 
-    output = "Your final percentage is " + perc + "%" + "\n" + "You get a " + letter;
+    /*Print out grade result*/
 
-    $("#output").html() = output;
+    output = "Your final percentage is " + perc + "%" + "\n" + "You get " + letter;
+
+    $("#output").html(output)
+
 })
